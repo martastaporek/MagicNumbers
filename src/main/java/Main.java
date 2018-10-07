@@ -1,4 +1,4 @@
-import extension.ExtenstionManager;
+import extension.ExtensionManager;
 
 public class Main {
 
@@ -7,7 +7,7 @@ public class Main {
         if(args.length == 0){
             System.out.println("No path provided");
         }else{
-            new ExtenstionManager().chooseExtenstion(args[0]);
+            new ExtensionManager().chooseExtenstion(args[0]);
         }
     }
 }

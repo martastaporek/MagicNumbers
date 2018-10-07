@@ -1,6 +1,6 @@
 package extension;
 
-public enum ExtenstionType {
+public enum ExtenstonType {
 
     jpg,
     jpeg,

@@ -4,20 +4,18 @@ import CustomException.UnsupportedExtension;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+public class ExtensionManagerTest {
 
-public class ExtenstionManagerTest {
-
-    private ExtenstionManager extenstionManager;
+    private ExtensionManager extensionManager;
 
     @Before
     public void setup(){
-        this.extenstionManager = new ExtenstionManager();
+        this.extensionManager = new ExtensionManager();
     }
 
     @Test(expected = UnsupportedExtension.class)
     public void test_throwExceptionForUnsupportedType(){
-        this.extenstionManager.chooseExtenstion(".pdf");
+        this.extensionManager.chooseExtenstion(".pdf");
 
     }
 
