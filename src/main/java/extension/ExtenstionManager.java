@@ -1,5 +1,6 @@
 package extension;
 
+import CustomException.UnsupportedExtension;
 import handler.GifHandler;
 import handler.JpgHandler;
 import handler.TxtHandler;
@@ -17,8 +18,7 @@ public class ExtenstionManager {
         }else if(pathLowerCase.endsWith(ExtenstionType.gif.name())){
             new GifHandler().handle(path);
         }else{
-            System.out.println("Unhandled type of extenstion");
-            System.exit(1);
+            throw new UnsupportedExtension("This type of exception is not handled");
         }
 
     }
