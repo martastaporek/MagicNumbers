@@ -2,11 +2,6 @@ package handler;
 
 import util.Loader;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class TxtHandler implements Handler {
 
     //number of chars readBytes from file
@@ -18,11 +13,10 @@ public class TxtHandler implements Handler {
         char [] chars = read(path);
 
         if(validate(chars)){
-            System.out.println("This is txt file");
+            System.out.println(path + " is txt file");
         }else {
-            System.out.println("This no a txt file");
+            System.out.println(path + "no a txt file");
         }
-
 
     }
 

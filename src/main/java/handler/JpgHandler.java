@@ -1,10 +1,6 @@
 package handler;
 
 import util.Loader;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Arrays;
 
 public class JpgHandler implements Handler {
@@ -19,11 +15,10 @@ public class JpgHandler implements Handler {
 
         byte[] bytes = read(path);
         if (validate(bytes)) {
-            System.out.println("This is jpg file");
+            System.out.println(path + " is jpg file");
         } else {
-            System.out.println("This is not a jpg file");
+            System.out.println(path + " is not a jpg file");
         }
-
 
     }
 

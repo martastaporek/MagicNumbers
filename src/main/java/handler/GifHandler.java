@@ -1,10 +1,6 @@
 package handler;
 
 import util.Loader;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Arrays;
 
 public class GifHandler implements Handler {
@@ -18,6 +14,11 @@ public class GifHandler implements Handler {
     public void handle(String path) {
 
         byte [] bytes = read(path);
+        if(validate(bytes)){
+            System.out.println(path + " is a gif file.");
+        }else {
+            System.out.println(path + " is not a gif file");
+        }
 
     }
 

@@ -12,6 +12,7 @@ public class Loader {
             in.read(bytes);
         } catch (FileNotFoundException e) {
             System.out.println("File path is incorrect");
+            System.exit(1);
         } catch (IOException e) {
             e.printStackTrace();
         }
