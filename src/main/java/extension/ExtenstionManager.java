@@ -1,15 +1,21 @@
 package extension;
 
+import handler.GifHandler;
+import handler.JpgHandler;
+import handler.TxtHandler;
+
 public class ExtenstionManager {
 
     public void chooseExtenstion(String path){
 
-        if(path.endsWith(ExtenstionType.txt.name())){
+        String pathLowerCase = path.toLowerCase();
 
-        }else if(path.endsWith(ExtenstionType.jpeg.name()) || path.endsWith(ExtenstionType.jpg.name())){
-
-        }else if(path.endsWith(ExtenstionType.gif.name())){
-
+        if(pathLowerCase.endsWith(ExtenstionType.txt.name())){
+            new TxtHandler().handle(path);
+        }else if(pathLowerCase.endsWith(ExtenstionType.jpeg.name()) || pathLowerCase.endsWith(ExtenstionType.jpg.name())){
+            new JpgHandler().handle(path);
+        }else if(pathLowerCase.endsWith(ExtenstionType.gif.name())){
+            new GifHandler().handle(path);
         }else{
             System.out.println("Unhandled type of extenstion");
             System.exit(1);
