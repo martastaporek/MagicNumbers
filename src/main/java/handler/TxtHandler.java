@@ -23,7 +23,7 @@ public class TxtHandler implements Handler {
 
     }
 
-    private char[] read(String path){
+    public char[] read(String path){
 
         char[] chars = new char[SIZE];
 
@@ -40,15 +40,16 @@ public class TxtHandler implements Handler {
 
     }
 
-    private boolean validate(char [] chars){
+    public boolean validate(char [] chars){
 
         for(char ch : chars){
-            if(!Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch)){
-                return false;
-            }
             if(ch == 0){
                 break;
             }
+            if(!Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch)){
+                return false;
+            }
+
         }
         return true;
     }
