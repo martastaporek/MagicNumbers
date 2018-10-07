@@ -1,5 +1,7 @@
 package handler;
 
+import util.Loader;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +11,7 @@ public class JpgHandler implements Handler {
 
     private final byte[] EXTENCTION_SIGNATURE = {-1, -40, -1};
     private final int SIGNATURE_LENGTH = 3;
+    private Loader loader = new Loader();
 
 
     @Override
@@ -26,17 +29,7 @@ public class JpgHandler implements Handler {
 
     public byte[] read(String path) {
 
-        byte[] bytes = new byte[SIGNATURE_LENGTH];
-
-        try (FileInputStream in = new FileInputStream(path)) {
-            in.read(bytes);
-        } catch (FileNotFoundException e) {
-            System.out.println("File path is incorrect");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return bytes;
+        return this.loader.readBytes(path, SIGNATURE_LENGTH);
     }
 
     public boolean validate(byte [] bytes){

@@ -1,5 +1,7 @@
 package handler;
 
+import util.Loader;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -7,8 +9,9 @@ import java.io.IOException;
 
 public class TxtHandler implements Handler {
 
-    //number of chars read from file
+    //number of chars readBytes from file
     private final int SIZE = 2000;
+    private Loader loader = new Loader();
 
     public void handle(String path){
 
@@ -25,18 +28,7 @@ public class TxtHandler implements Handler {
 
     public char[] read(String path){
 
-        char[] chars = new char[SIZE];
-
-        try (BufferedReader in = new BufferedReader(new FileReader(path))) {
-            in.read(chars);
-        }catch (FileNotFoundException e) {
-            System.out.println("Filepath is incorrect");
-            System.exit(1);
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return chars;
+        return this.loader.readChars(path, SIZE);
 
     }
 
